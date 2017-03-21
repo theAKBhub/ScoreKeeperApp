@@ -1,0 +1,128 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Logo ImageView -->
+    <style name="logo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/logo_scorer</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_marginBottom">@dimen/activity_vertical_margin</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <!-- Transparent Background Panel -->
+    <style name="backgroundPanel">
+        <item name="android:background">@color/colorCreamTrans</item>
+        <item name="android:layout_margin">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="infoText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_marginBottom">@dimen/activity_vertical_margin</item>
+        <item name="android:textColor">@color/colorDarkOlive</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="infoTextRed">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_marginBottom">@dimen/activity_vertical_margin</item>
+        <item name="android:textColor">@color/colorCherryRed</item>
+        <item name="android:textSize">@dimen/font_large</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="btnGreen">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/dimen_10dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_10dp</item>
+        <item name="android:padding">@dimen/dimen_10dp</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textColor">@color/colorCream</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="btnRed">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/dimen_10dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_10dp</item>
+        <item name="android:padding">@dimen/dimen_10dp</item>
+        <item name="android:background">@drawable/button_red</item>
+        <item name="android:textColor">@color/colorCream</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="teamPanel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/dimen_150dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">@dimen/dimen_5dp</item>
+        <item name="android:textColor">@color/colorDarkOlive</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_10dp</item>
+    </style>
+
+    <style name="teamPanelBorder">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">@dimen/dimen_150dp</item>
+        <item name="android:background">@color/colorOlive</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_30dp</item>
+    </style>
+
+    <style name="infoTeam">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textColor">@color/colorDarkOlive</item>
+        <item name="android:textSize">@dimen/font_large</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_10dp</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="infoScore">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textColor">@color/colorCherryRed</item>
+        <item name="android:textSize">@dimen/font_xlarge</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_10dp</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="btnScore">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginRight">@dimen/dimen_5dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_5dp</item>
+        <item name="android:padding">@dimen/dimen_5dp</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textColor">@color/colorCream</item>
+        <item name="android:textSize">@dimen/font_small</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+</resources>

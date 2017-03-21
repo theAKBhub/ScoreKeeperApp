@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">ScoreKeeperApp</string>
+
+    <!-- Titles -->
+    <string name="title_rules">Rules</string>
+
+    <!-- Button Labels -->
+    <string name="btn_label_toss">Toss</string>
+    <string name="btn_label_start">Start Match</string>
+    <string name="btn_label_new">Start New Match</string>
+
+    <!-- Information Text -->
+    <string name="info_rules">
+            Each team will get to play 5 overs\n
+            Each over will consist of 6 balls\n
+            Each team will have 11 players
+    </string>
+    <string name="teamA">Team A</string>
+    <string name="teamB">Team B</string>
+
+    <!-- Messages -->
+    <string name="msg_toss">has won the toss and will bat first</string>
+    <string name="msg_current">is currently batting</string>
+    <string name="msg_endgame">End of Game for</string>
+    <string name="msg_result">is the winner of this match</string>
+    <string name="msg_draw">This match has ended in a draw</string>
+
+    <!-- Scores -->
+    <string name="score_zero">+0 run</string>
+    <string name="score_one">+1 run</string>
+    <string name="score_two">+2 runs</string>
+    <string name="score_three">+3 runs</string>
+    <string name="score_four">+4 runs</string>
+    <string name="score_six">+6 runs</string>
+    <string name="score_wkt">wicket</string>
+</resources>

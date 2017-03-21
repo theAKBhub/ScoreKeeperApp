@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#8bc34a</color>
+    <color name="colorPrimaryDark">#33691e</color>
+    <color name="colorAccent">#f1f8e9</color>
+
+    <!-- colors for custom styling -->
+    <color name="colorCream">#f2efe8</color>
+    <color name="colorCreamTrans">#95f2efe8</color>
+    <color name="colorLightOlive">#b5ad96</color>
+    <color name="colorOlive">#707241</color>
+    <color name="colorDarkOlive">#383917</color>
+    <color name="colorCherryRed">#800504</color>
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/grass_bg"
+tools:context="com.example.android.scorekeeperapp.MainActivity">
+
+<LinearLayout
+    style="@style/backgroundPanel"
+    android:orientation="vertical">
+
+    <ImageView
+        style="@style/logo"/>
+
+    <TextView
+        style="@style/infoTextRed"
+        android:textAllCaps="true"
+        android:text="@string/title_rules"/>
+
+    <TextView
+        style="@style/infoText"
+        android:text="@string/info_rules"/>
+
+    <Button
+        android:id="@+id/id_button_toss"
+        android:text="@string/btn_label_toss"
+        style="@style/btnGreen"
+        android:onClick="onClickToss" />
+
+    <TextView
+        android:id="@+id/id_msg_toss"
+        style="@style/infoTextRed"/>
+
+    <Button
+        android:id="@+id/id_button_start"
+        android:text="@string/btn_label_start"
+        style="@style/btnRed"
+        android:onClick="onClickStartMatch" />
+</LinearLayout>
+
+</LinearLayout>

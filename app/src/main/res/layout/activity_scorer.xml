@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorCream"
+    tools:context="com.example.android.scorekeeperapp.ScorerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_vertical_margin">
+
+        <TextView
+            android:id="@+id/id_current_team"
+            style="@style/infoTeam"
+            android:textSize="@dimen/font_medium"
+            android:textColor="@color/colorCherryRed"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/id_teamA"
+                style="@style/teamPanel"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/infoTeam"
+                    android:text="@string/teamA"
+                    android:textSize="@dimen/font_xlarge"/>
+
+                <TextView
+                    android:id="@+id/id_score_TeamA"
+                    style="@style/infoScore"
+                    android:text="0 / 0"/>
+
+                <TextView
+                    android:id="@+id/id_overs_TeamA"
+                    style="@style/infoTeam"
+                    android:text="(0.0)"/>
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/teamPanelBorder"/>
+
+            <LinearLayout
+                android:id="@+id/id_teamB"
+                style="@style/teamPanel"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/infoTeam"
+                    android:text="@string/teamB"
+                    android:textSize="@dimen/font_xlarge"/>
+
+                <TextView
+                    android:id="@+id/id_score_TeamB"
+                    style="@style/infoScore"
+                    android:text="0 / 0"/>
+
+                <TextView
+                    android:id="@+id/id_overs_TeamB"
+                    style="@style/infoTeam"
+                    android:text="(0.0)"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_runs_row1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/id_button_0run"
+                android:text="@string/score_zero"
+                style="@style/btnScore"
+                android:onClick="onClickProcessScores" />
+            <Button
+                android:id="@+id/id_button_1run"
+                android:text="@string/score_one"
+                style="@style/btnScore"
+                android:onClick="onClickProcessScores" />
+            <Button
+                android:id="@+id/id_button_2runs"
+                android:text="@string/score_two"
+                style="@style/btnScore"
+                android:onClick="onClickProcessScores" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/id_runs_row2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/id_button_3runs"
+                android:text="@string/score_three"
+                style="@style/btnScore"
+                android:onClick="onClickProcessScores" />
+            <Button
+                android:id="@+id/id_button_4runs"
+                android:text="@string/score_four"
+                style="@style/btnScore"
+                android:onClick="onClickProcessScores" />
+            <Button
+                android:id="@+id/id_button_6runs"
+                android:text="@string/score_six"
+                style="@style/btnScore"
+                android:onClick="onClickProcessScores" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/id_button_wicket"
+            android:text="@string/score_wkt"
+            style="@style/btnRed"
+            android:onClick="onClickProcessWickets" />
+
+        <TextView
+            android:id="@+id/id_result"
+            style="@style/infoTeam"
+            android:textSize="@dimen/font_large"
+            android:textColor="@color/colorCherryRed"/>
+
+        <Button
+            android:id="@+id/id_button_new"
+            android:text="@string/btn_label_new"
+            style="@style/btnRed"
+            android:visibility="invisible"
+            android:onClick="onClickStartNew" />
+
+    </LinearLayout>
+</ScrollView>
