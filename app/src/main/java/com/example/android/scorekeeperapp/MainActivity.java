@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickToss(View view) {
         int min = 1;
         int max = 2;
-        String message_toss = "";
+        String message_toss;
 
         Random rand = new Random();
         int toss_value = rand.nextInt((max - min) + 1) + min;

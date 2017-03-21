@@ -3,6 +3,8 @@
     <!-- Dimensions -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="dimen_1dp">1dp</dimen>
+    <dimen name="dimen_3dp">3dp</dimen>
     <dimen name="dimen_5dp">5dp</dimen>
     <dimen name="dimen_10dp">10dp</dimen>
     <dimen name="dimen_20dp">20dp</dimen>

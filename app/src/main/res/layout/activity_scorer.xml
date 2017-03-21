@@ -38,12 +38,12 @@
                 <TextView
                     android:id="@+id/id_score_TeamA"
                     style="@style/infoScore"
-                    android:text="0 / 0"/>
+                    android:text="@string/start_score"/>
 
                 <TextView
                     android:id="@+id/id_overs_TeamA"
                     style="@style/infoTeam"
-                    android:text="(0.0)"/>
+                    android:text="@string/start_overs"/>
 
             </LinearLayout>
 
@@ -63,12 +63,12 @@
                 <TextView
                     android:id="@+id/id_score_TeamB"
                     style="@style/infoScore"
-                    android:text="0 / 0"/>
+                    android:text="@string/start_score"/>
 
                 <TextView
                     android:id="@+id/id_overs_TeamB"
                     style="@style/infoTeam"
-                    android:text="(0.0)"/>
+                    android:text="@string/start_overs"/>
 
             </LinearLayout>
 
@@ -138,7 +138,7 @@
             android:text="@string/btn_label_new"
             style="@style/btnRed"
             android:visibility="invisible"
-            android:onClick="onClickStartNew" />
+            android:onClick="" />
 
     </LinearLayout>
 </ScrollView>

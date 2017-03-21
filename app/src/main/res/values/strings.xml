@@ -17,6 +17,8 @@
     </string>
     <string name="teamA">Team A</string>
     <string name="teamB">Team B</string>
+    <string name="start_score">(0 / 0)</string>
+    <string name="start_overs">(0.0)</string>
 
     <!-- Messages -->
     <string name="msg_toss">has won the toss and will bat first</string>

@@ -11,4 +11,7 @@
     <color name="colorOlive">#707241</color>
     <color name="colorDarkOlive">#383917</color>
     <color name="colorCherryRed">#800504</color>
+    <color name="colorDarkRed">#4b0012</color>
+    <color name="colorGrey">#aaaaaa</color>
+    <color name="colorDarkGrey">#555555</color>
 </resources>

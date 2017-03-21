@@ -4,7 +4,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
-android:layout_height="match_parent"
+android:layout_height="fill_parent"
 android:background="@drawable/grass_bg"
 tools:context="com.example.android.scorekeeperapp.MainActivity">
 
@@ -13,7 +13,8 @@ tools:context="com.example.android.scorekeeperapp.MainActivity">
     android:orientation="vertical">
 
     <ImageView
-        style="@style/logo"/>
+        style="@style/logo"
+        android:contentDescription="@string/app_name"/>
 
     <TextView
         style="@style/infoTextRed"
@@ -24,7 +25,7 @@ tools:context="com.example.android.scorekeeperapp.MainActivity">
         style="@style/infoText"
         android:text="@string/info_rules"/>
 
-    <Button
+        <Button
         android:id="@+id/id_button_toss"
         android:text="@string/btn_label_toss"
         style="@style/btnGreen"
@@ -37,8 +38,7 @@ tools:context="com.example.android.scorekeeperapp.MainActivity">
     <Button
         android:id="@+id/id_button_start"
         android:text="@string/btn_label_start"
-        style="@style/btnRed"
-        android:onClick="onClickStartMatch" />
+        style="@style/btnRed"/>
 </LinearLayout>
 
 </LinearLayout>
