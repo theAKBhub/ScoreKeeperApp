@@ -76,48 +76,46 @@
 
         <LinearLayout
             android:id="@+id/id_runs_row1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/id_button_0run"
                 android:text="@string/score_zero"
-                style="@style/btnScore"
-                android:onClick="onClickProcessScores" />
+                style="@style/btnScore" />
             <Button
                 android:id="@+id/id_button_1run"
                 android:text="@string/score_one"
-                style="@style/btnScore"
-                android:onClick="onClickProcessScores" />
+                style="@style/btnScore" />
             <Button
                 android:id="@+id/id_button_2runs"
                 android:text="@string/score_two"
                 style="@style/btnScore"
-                android:onClick="onClickProcessScores" />
+                android:layout_marginRight="@dimen/dimen_0dp" />
 
         </LinearLayout>
         <LinearLayout
             android:id="@+id/id_runs_row2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/id_button_3runs"
                 android:text="@string/score_three"
-                style="@style/btnScore"
-                android:onClick="onClickProcessScores" />
+                style="@style/btnScore" />
             <Button
                 android:id="@+id/id_button_4runs"
                 android:text="@string/score_four"
-                style="@style/btnScore"
-                android:onClick="onClickProcessScores" />
+                style="@style/btnScore" />
             <Button
                 android:id="@+id/id_button_6runs"
                 android:text="@string/score_six"
                 style="@style/btnScore"
-                android:onClick="onClickProcessScores" />
+                android:layout_marginRight="@dimen/dimen_0dp" />
 
         </LinearLayout>
 

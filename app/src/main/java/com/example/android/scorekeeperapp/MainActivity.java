@@ -14,18 +14,23 @@ public class MainActivity extends AppCompatActivity {
 
     Button button, button_start;
     String team;
+    TextView textviewToss;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        textviewToss = (TextView) findViewById(R.id.id_msg_toss);
+
         button_start = (Button) findViewById(R.id.id_button_start);
         button_start.setVisibility(View.INVISIBLE);
         addListenerOnButton();
     }
 
-    /**-------   Invokes Scorer Activity Using Intent -------**/
+    /**
+     * Invokes Scorer Activity Using Intent
+     */
     public void addListenerOnButton() {
         final Context context = this;
         button = (Button) findViewById(R.id.id_button_start);
@@ -40,8 +45,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /**---------  Picks a number between 1 and 2 randomly.
-     *----------  Team A wins toss if 1, Team B wins toss if 2  ----------**/
+    /**
+     * Picks a number between 1 and 2 randomly.
+     * Team A wins toss if 1, Team B wins toss if 2
+     */
     public void onClickToss(View view) {
         int min = 1;
         int max = 2;
@@ -57,11 +64,8 @@ public class MainActivity extends AppCompatActivity {
             team = getString(R.string.teamB);
         }
         message_toss = team  + " " + getString(R.string.msg_toss);
-
-        TextView textviewToss = (TextView) findViewById(R.id.id_msg_toss);
         textviewToss.setText(message_toss);
 
-        button_start = (Button) findViewById(R.id.id_button_start);
         button_start.setVisibility(View.VISIBLE);
     }
 }
