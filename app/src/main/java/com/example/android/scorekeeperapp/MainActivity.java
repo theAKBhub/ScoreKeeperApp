@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         else if (toss_value == 2) {
             team = getString(R.string.teamB);
         }
-        message_toss = team  + " " + getString(R.string.msg_toss);
+        message_toss = getString(R.string.msg_toss, team);
         textviewToss.setText(message_toss);
 
         button_start.setVisibility(View.VISIBLE);

@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import static com.example.android.scorekeeperapp.R.string.msg_result;
-
 public class ScorerActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "TAG_ScorerActivity";
@@ -21,6 +19,14 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
     public static final int MAX_BALLS_PER_OVER = 6;
     public static final int MAX_WICKETS = 10;
 
+    static final String STATE_TEAMINDEX = "currTeamIndex_svd";
+    static final String STATE_MATCHSTATUS = "matchStatus_svd";
+    static final String STATE_SCORES = "arrayScores_svd";
+    static final String STATE_BALLS = "arrayBalls_svd";
+    static final String STATE_OVERS = "arrayOvers_svd";
+    static final String STATE_WICKETS = "arrayWickets_svd";
+    static final String STATE_OVERSDISP = "arrayOversDisp_svd";
+
     int currTeamIndex = 0;
     int matchStatus = 0;
 
@@ -29,6 +35,7 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
     int [] arrayOvers = new int[2];
     int [] arrayWickets = new int[2];
     String [] arrayOversDisp = {"0.0", "0.0"};
+    String [] arrayTeams = new String[2];
 
     TextView tvCurrentTeam;
     TextView tvScoreTeamA;
@@ -57,6 +64,9 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
 
         Bundle bundle = getIntent().getExtras();
         team = bundle.getString("message");
+
+        arrayTeams[0] = getString(R.string.teamA);
+        arrayTeams[1] = getString(R.string.teamB);
 
         tvCurrentTeam = (TextView) findViewById(R.id.id_current_team);
         tvScoreTeamA = (TextView) findViewById(R.id.id_score_TeamA);
@@ -98,13 +108,13 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
      */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putInt("currTeamIndex_svd", currTeamIndex);
-        outState.putInt("matchStatus_svd", matchStatus);
-        outState.putIntArray("arrayScores_svd", arrayScores);
-        outState.putIntArray("arrayBalls_svd", arrayBalls);
-        outState.putIntArray("arrayOvers_svd", arrayOvers);
-        outState.putIntArray("arrayWickets_svd", arrayWickets);
-        outState.putStringArray("arrayOversDisp_svd", arrayOversDisp);
+        outState.putInt(STATE_TEAMINDEX, currTeamIndex);
+        outState.putInt(STATE_MATCHSTATUS, matchStatus);
+        outState.putIntArray(STATE_SCORES, arrayScores);
+        outState.putIntArray(STATE_BALLS, arrayBalls);
+        outState.putIntArray(STATE_OVERS, arrayOvers);
+        outState.putIntArray(STATE_WICKETS, arrayWickets);
+        outState.putStringArray(STATE_OVERSDISP, arrayOversDisp);
         super.onSaveInstanceState(outState);
     }
 
@@ -118,13 +128,13 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         if (savedInstanceState != null) {
-            currTeamIndex = savedInstanceState.getInt("currTeamIndex_svd");
-            matchStatus = savedInstanceState.getInt("matchStatus_svd");
-            arrayScores = savedInstanceState.getIntArray("arrayScores_svd");
-            arrayBalls = savedInstanceState.getIntArray("arrayBalls_svd");
-            arrayOvers = savedInstanceState.getIntArray("arrayOvers_svd");
-            arrayWickets = savedInstanceState.getIntArray("arrayWickets_svd");
-            arrayOversDisp = savedInstanceState.getStringArray("arrayOversDisp_svd");
+            currTeamIndex = savedInstanceState.getInt(STATE_TEAMINDEX);
+            matchStatus = savedInstanceState.getInt(STATE_MATCHSTATUS);
+            arrayScores = savedInstanceState.getIntArray(STATE_SCORES);
+            arrayBalls = savedInstanceState.getIntArray(STATE_BALLS);
+            arrayOvers = savedInstanceState.getIntArray(STATE_OVERS);
+            arrayWickets = savedInstanceState.getIntArray(STATE_WICKETS);
+            arrayOversDisp = savedInstanceState.getStringArray(STATE_OVERSDISP);
         }
         displayTeamInfo();
         displayScore();
@@ -220,7 +230,7 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
      * This index is used throughout for all arrays
      */
     public void setTeamIndex() {
-        if (team.equals(getString(R.string.teamA))) { //Team A is current player
+        if (team.equals(arrayTeams[0])) { //Team A is current player
             currTeamIndex = 0;
         }
         else { //Team B is current player
@@ -313,24 +323,24 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
         String team_played = "";
 
         if (matchStatus == 0) { //1st team playing
-            display_msg = team + " " + getString(R.string.msg_current);
+            display_msg = getString(R.string.msg_current, team);
         }
         else if (matchStatus == 1) { //1st team completed playing. 2nd team playing.
             if (currTeamIndex == 0) {
-                team_played = getString(R.string.teamA);
-                team = getString(R.string.teamB);
+                team_played = arrayTeams[0];
+                team = arrayTeams[1];
             }
             else if (currTeamIndex == 1) {
-                team_played = getString(R.string.teamB);
-                team = getString(R.string.teamA);
+                team_played = arrayTeams[1];
+                team = arrayTeams[0];
             }
-            display_msg = getString(R.string.msg_endgame) + " " + team_played + "\n";
-            display_msg += team + " " + getString(R.string.msg_current);
+            display_msg = getString(R.string.msg_endgame, team_played) + "\n";
+            display_msg +=  getString(R.string.msg_current, team);
         }
         else if (matchStatus == 2) {
-            display_msg = getString(R.string.msg_endgame) + " " + getString(R.string.teamA);
+            display_msg = getString(R.string.msg_endgame, arrayTeams[0]);
             display_msg += "\n";
-            display_msg += getString(R.string.msg_endgame) + " " + getString(R.string.teamB);
+            display_msg += getString(R.string.msg_endgame, arrayTeams[1]);
         }
 
         tvCurrentTeam.setText(display_msg);
@@ -365,10 +375,10 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
             display_msg_result = "\n" + getString(R.string.msg_draw) + "\n";
         }
         else if (arrayScores[0] > arrayScores[1]) {
-            display_msg_result = "\n" + getString(R.string.teamA) + " " + getString(msg_result) + "\n";
+            display_msg_result = "\n" + getString(R.string.msg_result, arrayTeams[0]) + "\n";
         }
         else if (arrayScores[0] < arrayScores[1]) {
-            display_msg_result = "\n" + getString(R.string.teamB) + " " + getString(msg_result) + "\n";
+            display_msg_result = "\n" + getString(R.string.msg_result, arrayTeams[1]) + "\n";
         }
 
         tvResult.setText(display_msg_result);

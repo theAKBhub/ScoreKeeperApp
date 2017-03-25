@@ -21,10 +21,10 @@
     <string name="start_overs">(0.0)</string>
 
     <!-- Messages -->
-    <string name="msg_toss">has won the toss and will bat first</string>
-    <string name="msg_current">is currently batting</string>
-    <string name="msg_endgame">End of Game for</string>
-    <string name="msg_result">is the winner of this match</string>
+    <string name="msg_toss">%s has won the toss and will bat first</string>
+    <string name="msg_current">%s is currently batting</string>
+    <string name="msg_endgame">End of Game for %s</string>
+    <string name="msg_result">%s is the winner of this match</string>
     <string name="msg_draw">This match has ended in a draw</string>
 
     <!-- Scores -->
