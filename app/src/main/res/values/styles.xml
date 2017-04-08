@@ -10,12 +10,13 @@
 
     <!-- Logo ImageView -->
     <style name="logo">
-        <item name="android:layout_margin">@dimen/activity_horizontal_margin</item>
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:src">@drawable/logo_scorer_keeper</item>
+        <item name="android:background">#f7f5cc</item>
         <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:layout_marginTop">@dimen/activity_vertical_margin</item>
+        <item name="android:paddingTop">@dimen/dimen_24dp</item>
+        <item name="android:paddingBottom">@dimen/dimen_24dp</item>
         <item name="android:layout_marginBottom">@dimen/activity_vertical_margin</item>
         <item name="android:scaleType">centerInside</item>
     </style>
@@ -36,9 +37,8 @@
     </style>
 
     <style name="HeadingText" parent="GenLayout">
-        <item name="android:textSize">@dimen/textsize_heading</item>
-        <item name="android:layout_marginTop">@dimen/dimen_10dp</item>
-        <item name="android:layout_marginBottom">@dimen/dimen_48dp</item>
+        <item name="android:textSize">@dimen/textsize_xlarge</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_40dp</item>
     </style>
 
     <style name="HighlightedText" parent="GenLayout">
@@ -85,8 +85,8 @@
     </style>
 
     <style name="ButtonReset" parent="GenButton">
-        <item name="android:background">@color/colorGreenLight</item>
-        <item name="android:textColor">@color/colorGreenDark</item>
+        <item name="android:background">@color/colorBrownLight</item>
+        <item name="android:textColor">@color/colorWhite</item>
     </style>
 
     <style name="ButtonScore">
@@ -132,4 +132,8 @@
         <item name="android:textSize">@dimen/textsize_xlarge</item>
     </style>
 
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:background">@color/colorCream</item>
+    </style>
 </resources>

@@ -1,6 +1,8 @@
 package com.example.android.scorekeeperapp;
 
 import android.content.Context;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -13,7 +15,7 @@ import android.widget.TextView;
 
 public class ScorerActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Context mContext;
+    final Context mContext = this;
 
     public static final int MAX_OVERS = 5;
     public static final int MAX_BALLS_PER_OVER = 6;
@@ -75,8 +77,6 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
         Bundle bundle = getIntent().getExtras();
         mSelectedTeam = bundle.getString("message");
         mFirstTeam = mSelectedTeam;
-
-        mContext = this;
 
         // Initialize UI components
         mTextViewTeamMsg = (TextView) findViewById(R.id.text_team_msg);
@@ -434,7 +434,7 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
             display_msg_result = getString(R.string.msg_result, mArrayTeams[1]);
         }
 
-        mTextViewTeamMsg.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorRed));
+        mTextViewTeamMsg.setBackgroundColor(ContextCompat.getColor(mContext, R.color.colorBrownLight));
         mTextViewTeamMsg.setTextColor(ContextCompat.getColor(mContext, R.color.colorWhite));
         mTextViewTeamMsg.setText(display_msg_result);
         mButtonNewMatch.setVisibility(View.VISIBLE);
@@ -452,25 +452,42 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
      * This method resets all scores
      */
     public void resetScores() {
-        mSelectedTeam = mFirstTeam; // Set the first team to play
-        mMatchStatus = 0; // No team has played yet
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext, R.style.DialogTheme);
+        builder.setMessage(getString(R.string.text_alert))
+                .setTitle(getString(R.string.title_alert));
 
-        for (int i = 0; i < 2; i++) {
-            mArrayScores[i] = 0;
-            mArrayBalls[i] = 0;
-            mArrayOvers[i] = 0;
-            mArrayWickets[i] = 0;
-            mArrayExtras[i] = 0;
-            mArrayTeams[i] = "";
-        }
-        mArrayOversDisp[0] = "0.0";
-        mArrayOversDisp[1] = "0.0";
+        builder.setNegativeButton(getString(R.string.action_dialog_cancel), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // if this button is clicked, just close the dialog box and do nothing
+                dialog.cancel();
+            }
+        });
 
-        setTeamIndex();
-        displayTeamInfo();
-        displayScore();
-        displayOvers();
-        displayExtras();
+        builder.setPositiveButton(getString(R.string.action_dialog_ok), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User clicked OK button
+                mSelectedTeam = mFirstTeam; // Set the first team to play
+                mMatchStatus = 0; // No team has played yet
+
+                for (int i = 0; i < 2; i++) { // reset all scores
+                    mArrayScores[i] = 0;
+                    mArrayBalls[i] = 0;
+                    mArrayOvers[i] = 0;
+                    mArrayWickets[i] = 0;
+                    mArrayExtras[i] = 0;
+                    mArrayTeams[i] = "";
+                }
+                mArrayOversDisp[0] = "0.0";
+                mArrayOversDisp[1] = "0.0";
+
+                setTeamIndex();
+                displayTeamInfo();
+                displayScore();
+                displayOvers();
+                displayExtras();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
-
 }

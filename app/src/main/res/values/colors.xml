@@ -12,8 +12,9 @@
     <color name="colorGreenBack">#E0E591</color>
     <color name="colorRedDark">#7D060B</color>
     <color name="colorRed">#A9001B</color>
-    <color name="colorButtonDisabled">#555555</color>
     <color name="colorBrownDark">#2F2112</color>
+    <color name="colorBrownLight">#996C01</color>
     <color name="colorWhite">#FFFFFF</color>
-
+    <color name="colorCream">#F7F5CC</color>
+    <color name="colorButtonDisabled">#888888</color>
 </resources>

@@ -3,6 +3,7 @@
 
     <!-- Titles -->
     <string name="title_rules">Rules</string>
+    <string name="title_alert">Confirm Reset Scores</string>
 
     <!-- Button Labels -->
     <string name="btn_label_toss">Toss</string>
@@ -21,6 +22,9 @@
     <string name="text_start_score">0 / 0</string>
     <string name="text_start_overs">(0.0)</string>
     <string name="text_extras">Extras - %d</string>
+    <string name="text_alert">Are you sure you want to reset all scores?</string>
+    <string name="action_dialog_ok">ok</string>
+    <string name="action_dialog_cancel">cancel</string>
 
     <!-- Spinner values -->
     <string name="prompt_team">Team to bat first&#160;&#160;  >> </string>

@@ -16,7 +16,6 @@
     <dimen name="dimen_40dp">40dp</dimen>
     <dimen name="dimen_48dp">48dp</dimen>
     <dimen name="dimen_50dp">50dp</dimen>
-
     <dimen name="height_team_panel">170dp</dimen>
 
     <!-- Font Sizes -->
@@ -24,6 +23,5 @@
     <dimen name="textsize_medium">16sp</dimen>
     <dimen name="textsize_large">24sp</dimen>
     <dimen name="textsize_xlarge">34sp</dimen>
-    <dimen name="textsize_heading">45sp</dimen>
 
 </resources>

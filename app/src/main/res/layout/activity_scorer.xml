@@ -158,6 +158,7 @@
             android:id="@+id/button_new"
             android:text="@string/btn_label_new"
             style="@style/ButtonRed"
+            android:layout_marginTop="@dimen/dimen_10dp"
             android:visibility="invisible" />
 
     </LinearLayout>
