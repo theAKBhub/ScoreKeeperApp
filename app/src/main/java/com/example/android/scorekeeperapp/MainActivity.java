@@ -87,28 +87,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         intent.putExtra("message", selectedTeam);
         startActivity(intent);
     }
-
-    /**
-     * Picks a number between 1 and 2 randomly.
-     * Team A wins toss if 1, Team B wins toss if 2
-     */
- /*   public void onClickToss(View view) {
-        int min = 1;
-        int max = 2;
-        String message_toss;
-
-        Random rand = new Random();
-        int toss_value = rand.nextInt((max - min) + 1) + min;
-
-        if (toss_value == 1) {
-            team = getString(R.string.teamA);
-        }
-        else if (toss_value == 2) {
-            team = getString(R.string.teamB);
-        }
-        message_toss = getString(R.string.msg_toss, team);
-        textviewToss.setText(message_toss);
-
-        button_start.setVisibility(View.VISIBLE);
-    }*/
 }
