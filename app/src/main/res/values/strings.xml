@@ -8,17 +8,26 @@
     <string name="btn_label_toss">Toss</string>
     <string name="btn_label_start">Start Match</string>
     <string name="btn_label_new">Start New Match</string>
+    <string name="btn_label_reset">Reset</string>
 
     <!-- Information Text -->
-    <string name="info_rules">
+    <string name="text_rules">
             Each team will get to play 5 overs\n
             Each over will consist of 6 balls\n
             Each team will have 11 players
     </string>
-    <string name="teamA">Team A</string>
-    <string name="teamB">Team B</string>
-    <string name="start_score">0 / 0</string>
-    <string name="start_overs">(0.0)</string>
+    <string name="text_teamA">Team A</string>
+    <string name="text_teamB">Team B</string>
+    <string name="text_start_score">0 / 0</string>
+    <string name="text_start_overs">(0.0)</string>
+    <string name="text_extras">Extras - %d</string>
+
+    <!-- Spinner values -->
+    <string name="prompt_team">Team to bat first&#160;&#160;  >> </string>
+    <string-array name="array_team">
+        <item>Team A</item>
+        <item>Team B</item>
+    </string-array>
 
     <!-- Messages -->
     <string name="msg_toss">%s has won the toss and will bat first</string>
@@ -35,4 +44,6 @@
     <string name="score_four">+4 runs</string>
     <string name="score_six">+6 runs</string>
     <string name="score_wkt">wicket</string>
+    <string name="score_noball">no ball</string>
+    <string name="score_wide">wide</string>
 </resources>

@@ -5,42 +5,53 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:background="@drawable/grass_bg"
-android:padding="@dimen/activity_horizontal_margin"
+android:background="@color/colorGreenBack"
 android:fillViewport="true"
 tools:context="com.example.android.scorekeeperapp.MainActivity">
 
-<LinearLayout
-    style="@style/backgroundPanel"
-    android:orientation="vertical">
+    <LinearLayout
+        style="@style/backgroundPanel"
+        android:orientation="vertical">
 
-    <ImageView
-        style="@style/logo"
-        android:contentDescription="@string/app_name"/>
+        <ImageView
+            style="@style/logo"
+            android:contentDescription="@string/app_name"/>
 
-    <TextView
-        style="@style/infoTextRed"
-        android:textAllCaps="true"
-        android:text="@string/title_rules"/>
+        <TextView
+            style="@style/HeadingText"
+            android:textAllCaps="true"
+            android:text="@string/title_rules"/>
 
-    <TextView
-        style="@style/infoText"
-        android:text="@string/info_rules"/>
+        <TextView
+            android:id="@+id/text_rules"
+            style="@style/HighlightedText"
+            android:lineSpacingExtra="@dimen/dimen_1dp"
+            android:text="@string/text_rules"/>
+
+        <LinearLayout
+            style="@style/GreenPanel"
+            android:layout_marginTop="@dimen/dimen_50dp"
+            android:layout_marginBottom="@dimen/dimen_50dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_prompt"
+                style="@style/GenLayout"
+                android:layout_width="wrap_content"
+                android:text="@string/prompt_team" />
+
+            <Spinner
+                style="@style/SelectBox"
+                android:id="@+id/select_team"
+                android:entries="@array/array_team"
+                android:prompt="@string/prompt_team" />
+        </LinearLayout>
 
         <Button
-        android:id="@+id/id_button_toss"
-        android:text="@string/btn_label_toss"
-        style="@style/btnGreen"
-        android:onClick="onClickToss" />
-
-    <TextView
-        android:id="@+id/id_msg_toss"
-        style="@style/infoTextRed"/>
-
-    <Button
-        android:id="@+id/id_button_start"
-        android:text="@string/btn_label_start"
-        style="@style/btnRed"/>
-</LinearLayout>
+            android:id="@+id/button_start"
+            android:text="@string/btn_label_start"
+            style="@style/ButtonRed"/>
+    </LinearLayout>
 
 </ScrollView>

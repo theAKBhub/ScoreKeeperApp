@@ -2,54 +2,97 @@ package com.example.android.scorekeeperapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.util.Random;
+import static com.example.android.scorekeeperapp.R.id.button_start;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Class - MainActivity
+ * This class prompts for the team to start the game from first Activity (activity_main.xml)
+ * and invokes second Activity (activity_scorer.xml) with an Intent with selected team name as
+ * the parameter
+ */
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button button, button_start;
-    String team;
-    TextView textviewToss;
+    // All UI components
+    private TextView mTextViewRules;
+    private TextView mTextViewPrompt;
+    private Button mButtonStart;
+    private Spinner mSpinnerTeam;
+
+    // Various identifiers
+    private Typeface mCustomFont;
+
+    /*Button button, button_start;
+
+    TextView textviewToss;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textviewToss = (TextView) findViewById(R.id.id_msg_toss);
+        // Initialize UI components
+        mTextViewRules = (TextView) findViewById(R.id.text_rules);
+        mTextViewPrompt = (TextView) findViewById(R.id.text_prompt);
+        mButtonStart = (Button) findViewById(button_start);
+        mSpinnerTeam = (Spinner) findViewById(R.id.select_team);
 
-        button_start = (Button) findViewById(R.id.id_button_start);
-        button_start.setVisibility(View.INVISIBLE);
-        addListenerOnButton();
+        // Set custom typeface
+        mCustomFont = Typeface.createFromAsset(getAssets(), "fonts/roboto_regular.ttf");
+        setCustomTypeface();
+
+        mButtonStart.setOnClickListener(this);
+    }
+
+
+    /**
+     * Invokes methods for individual call to action buttons
+     * @param view
+     */
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.button_start:
+                startMatch();
+                break;
+        }
     }
 
     /**
-     * Invokes Scorer Activity Using Intent
+     * This method sets custom font for all views
      */
-    public void addListenerOnButton() {
-        final Context context = this;
-        button = (Button) findViewById(R.id.id_button_start);
+    public void setCustomTypeface() {
+        mTextViewRules.setTypeface(mCustomFont);
+        mTextViewPrompt.setTypeface(mCustomFont);
+        mButtonStart.setTypeface(mCustomFont);
+    }
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(context, ScorerActivity.class);
-                intent.putExtra("message", team);
-                startActivity(intent);
-            }
-        });
+    /**
+     * Invokes Scorer Activity with selected team name as the passed argument
+     */
+    public void startMatch() {
+        final Context context = this;
+        String selectedTeam = "";
+
+        selectedTeam += mSpinnerTeam.getSelectedItem();
+
+        Intent intent = new Intent(context, ScorerActivity.class);
+        intent.putExtra("message", selectedTeam);
+        startActivity(intent);
     }
 
     /**
      * Picks a number between 1 and 2 randomly.
      * Team A wins toss if 1, Team B wins toss if 2
      */
-    public void onClickToss(View view) {
+ /*   public void onClickToss(View view) {
         int min = 1;
         int max = 2;
         String message_toss;
@@ -67,5 +110,5 @@ public class MainActivity extends AppCompatActivity {
         textviewToss.setText(message_toss);
 
         button_start.setVisibility(View.VISIBLE);
-    }
+    }*/
 }
