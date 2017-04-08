@@ -1,7 +1,7 @@
 package com.example.android.scorekeeperapp;
 
-import android.content.Context;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -30,19 +30,19 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
     static final String STATE_EXTRAS = "mArrayExtras_svd";
     static final String STATE_OVERSDISP = "mArrayOversDisp_svd";
 
-    String mSelectedTeam;
-    String mFirstTeam;
+    private String mSelectedTeam;
+    private String mFirstTeam;
     private Typeface mCustomFont;
-    int mCurrTeamIndex = 0;
-    int mMatchStatus = 0;
+    private int mCurrTeamIndex = 0;
+    private int mMatchStatus = 0;
 
-    int [] mArrayScores = new int[2];
-    int [] mArrayBalls = new int[2];
-    int [] mArrayOvers = new int[2];
-    int [] mArrayWickets = new int[2];
-    int [] mArrayExtras = {0, 0};
-    String [] mArrayOversDisp = {"0.0", "0.0"};
-    String [] mArrayTeams = new String[2];
+    private int [] mArrayScores = new int[2];
+    private int [] mArrayBalls = new int[2];
+    private int [] mArrayOvers = new int[2];
+    private int [] mArrayWickets = new int[2];
+    private int [] mArrayExtras = {0, 0};
+    private String [] mArrayOversDisp = {"0.0", "0.0"};
+    private String [] mArrayTeams = new String[2];
 
     TextView mTextViewTeamMsg;
     TextView mTextViewScoreTeamA;
@@ -328,11 +328,10 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
 
         } else if (mMatchStatus == 1) { //first team has played
             prevTeamIndex = (mCurrTeamIndex == 0) ? 1 : 0;   //gets index of previous team
-            displayTeamInfo();
 
             //END MATCH if score of current team crosses score of previous team
             if ((mArrayScores[mCurrTeamIndex] > mArrayScores[prevTeamIndex]) ||
-                    (mArrayOvers[mCurrTeamIndex] > MAX_OVERS) ||
+                    (mArrayOvers[mCurrTeamIndex] == MAX_OVERS) ||
                     (mArrayWickets[mCurrTeamIndex] == MAX_WICKETS))    {
                 mMatchStatus = 2; // end of match. both teams have completed playing.
 
@@ -341,7 +340,7 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
             }
 
         } else if (mMatchStatus == 0) { //first team is playing
-            if ((mArrayOvers[mCurrTeamIndex] > MAX_OVERS) ||
+            if ((mArrayOvers[mCurrTeamIndex] == MAX_OVERS) ||
                     (mArrayWickets[mCurrTeamIndex] == MAX_WICKETS)) {
                 mMatchStatus = 1;
                 displayTeamInfo();
@@ -380,20 +379,21 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
     public void displayTeamInfo() {
         String display_msg = "";
         String team_played = "";
+        String team_current = "";
 
         if (mMatchStatus == 0) { //1st team playing
             display_msg = getString(R.string.msg_current, mSelectedTeam);
 
         } else if (mMatchStatus == 1) { //1st team completed playing. 2nd team playing.
-            if (mCurrTeamIndex == 0) {
-                team_played = mArrayTeams[0];
-                mSelectedTeam = mArrayTeams[1];
-            } else if (mCurrTeamIndex == 1) {
-                team_played = mArrayTeams[1];
-                mSelectedTeam = mArrayTeams[0];
-            }
-            display_msg = getString(R.string.msg_endgame, team_played) + "\n";
-            display_msg +=  getString(R.string.msg_current, mSelectedTeam);
+                if (mCurrTeamIndex == 0) {
+                    team_played = mArrayTeams[0];
+                    team_current = mArrayTeams[1];
+                } else if (mCurrTeamIndex == 1) {
+                    team_played = mArrayTeams[1];
+                    team_current = mArrayTeams[0];
+                }
+                display_msg = getString(R.string.msg_endgame, team_played) + "\n";
+                display_msg += getString(R.string.msg_current, team_current);
 
         } else if (mMatchStatus == 2) {
             display_msg = getString(R.string.msg_endgame, mArrayTeams[0]);
