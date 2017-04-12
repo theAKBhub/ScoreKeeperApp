@@ -385,15 +385,15 @@ public class ScorerActivity extends AppCompatActivity implements View.OnClickLis
             display_msg = getString(R.string.msg_current, mSelectedTeam);
 
         } else if (mMatchStatus == 1) { //1st team completed playing. 2nd team playing.
-                if (mCurrTeamIndex == 0) {
-                    team_played = mArrayTeams[0];
-                    team_current = mArrayTeams[1];
-                } else if (mCurrTeamIndex == 1) {
-                    team_played = mArrayTeams[1];
-                    team_current = mArrayTeams[0];
-                }
-                display_msg = getString(R.string.msg_endgame, team_played) + "\n";
-                display_msg += getString(R.string.msg_current, team_current);
+            if (mCurrTeamIndex == 0) {
+                team_played = mArrayTeams[0];
+                team_current = mArrayTeams[1];
+            } else if (mCurrTeamIndex == 1) {
+                team_played = mArrayTeams[1];
+                team_current = mArrayTeams[0];
+            }
+            display_msg = getString(R.string.msg_endgame, team_played) + "\n";
+            display_msg += getString(R.string.msg_current, team_current);
 
         } else if (mMatchStatus == 2) {
             display_msg = getString(R.string.msg_endgame, mArrayTeams[0]);
