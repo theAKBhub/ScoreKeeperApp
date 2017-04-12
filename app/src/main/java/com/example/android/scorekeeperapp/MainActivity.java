@@ -29,9 +29,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Various identifiers
     private Typeface mCustomFont;
 
-    /*Button button, button_start;
-
-    TextView textviewToss;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +47,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mButtonStart.setOnClickListener(this);
     }
-
 
     /**
      * Invokes methods for individual call to action buttons
